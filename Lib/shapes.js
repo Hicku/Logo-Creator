@@ -18,8 +18,8 @@ class Shape {
       this.radius = radius;
     }
   
-    render() {
-      return `<svg width="${this.width}" height="${this.height}"><circle cx="${this.width / 2}" cy="${this.height / 2}" r="${this.radius}" fill="${this.shapeColor}" /></svg>`; 
+    render(text, fontColor) {
+      return `<svg width="300" height="200"><circle cx="150" cy="100" r="${this.radius}" fill="${this.shapeColor}" /><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${fontColor}" font-size="50">${text}</text></svg>`;
     }
   }
   
@@ -27,12 +27,12 @@ class Shape {
   class Triangle extends Shape {
     constructor(shapeColor, width) {
       super(shapeColor);
-      this.width = width;
-      this.height = (this.width * Math.sqrt(3)) / 2;
+      this.width = 300;
+      this.height = 200;
     }
   
-    render() {
-      return `<svg width="${this.width}" height="${this.height}"><polygon points="0,${this.height} ${this.width / 2},0 ${this.width},${this.height}" fill="${this.shapeColor}" /></svg>`;
+    render(text, fontColor) {
+      return `<svg width="300" height="200"><polygon points="0,200 150,0 300,200" fill="${this.shapeColor}" /><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${fontColor}" font-size="50">${text}</text></svg>`;
     }
   }
   
@@ -40,18 +40,13 @@ class Shape {
   class Square extends Shape {
     constructor(shapeColor, width) {
       super(shapeColor);
-      this.width = width;
-      this.height = width;
+      this.width = 300;
+      this.height = 200;
     }
   
-    render() {
-      return `<svg width="${this.width}" height="${this.height}"><rect width="${this.width}" height="${this.height}" fill="${this.shapeColor}" /></svg>`;
+    render(text, fontColor) {
+      return `<svg width="300" height="200"><rect width="${this.width}" height="${this.height}" fill="${this.shapeColor}" /><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${fontColor}" font-size="50">${text}</text></svg>`;
     }
   }
   
   module.exports = { Circle, Triangle, Square };
-  
-  
-  
-  
-  

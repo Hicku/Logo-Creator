@@ -55,7 +55,7 @@ import('inquirer').then((inquirerModule) => {
       shape = new Triangle(answers.colour, 100);
     }
     const svg = shape.render(answers.text, answers.fontColour);
-    writeToFile('Image.svg', svg);
+    writeToFile('Logo.svg', svg);
   }).catch((error) => {
     console.error(error);
   });
