@@ -7,7 +7,7 @@ class Shape {
     }
   
     render() {
-      throw new Error('You have to implement the method render!');
+      throw new Error("You have to implement the method render!");
     }
   }
   
