@@ -20,4 +20,24 @@ const questions = [
          name: "text",
          message: "What text do you want in the logo?"           
         },
+        {
+            type: 'input',
+            name: 'width',
+            message: 'What width do you want for your logo?',
+            validate: function(value) {
+              let valid = !isNaN(parseFloat(value));
+              return valid || 'Please enter a number';
+            },
+            filter: Number
+          },
+          {
+            type: 'input',
+            name: 'height',
+            message: 'What height do you want for your logo?',
+            validate: function(value) {
+              let valid = !isNaN(parseFloat(value));
+              return valid || 'Please enter a number';
+            },
+            filter: Number
+          }
 ]
