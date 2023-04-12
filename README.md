@@ -31,3 +31,7 @@ If you have any questions, please feel free to contact me:
 
 ## Walkthrough Video
 Here is a walkthrough video demonstrating the functionality of the application: https://drive.google.com/file/d/1xGh7zdr5_dN0v6EgTGdHK9ni_LhhfeHN/view?usp=sharing
+
+## Github
+https://github.com/Hicku/Logo-Creator
+
