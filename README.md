@@ -26,7 +26,7 @@ This project is licensed under the MIT license.
 
 If you have any questions, please feel free to contact me:
 
-- GitHub: [hicku72](https://github.com/hicku72)
+- GitHub: https://github.com/Hicku
 - Email: aaron.hickman201@gmail.com
 
 ## Walkthrough Video
