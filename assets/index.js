@@ -16,7 +16,7 @@ import('inquirer').then((inquirerModule) => {
       type: "input",
       name: "colour",
       message: "What colour do you want for your shape (in hexadecimal format)?",
-      validate: function(value) {
+      validate: function (value) {
         const hexRegex = /^#([0-9A-Fa-f]{3}){1,2}$/i;
         return hexRegex.test(value) || "Please enter a valid hexadecimal colour value";
       }
@@ -25,7 +25,7 @@ import('inquirer').then((inquirerModule) => {
       type: "input",
       name: "text",
       message: "What text do you want in the logo?",
-      validate: function(value) {
+      validate: function (value) {
         return value.length <= 3 || "Text must be 3 characters or less";
       }
     },
