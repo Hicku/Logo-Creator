@@ -1,22 +1,25 @@
+// Define the base Shape class
 class Shape {
-  constructor(shapeColor) {
-    this.shapeColor = shapeColor;
-    this.width = 300;
-    this.height = 200;
+  constructor(shapeColor) { // Constructor function that takes in a shapeColor parameter
+    this.shapeColor = shapeColor; // Set the shapeColor property on the instance
+    this.width = 300; // Set the default width property on the instance
+    this.height = 200;   // Set the default height property on the instance
   }
 
-  render() {
+  render() {  // Define a render method on the class that throws an error
     throw new Error("You have to implement the method render!");
   }
 }
 
+// Define the Circle class, which extends the Shape class
 class Circle extends Shape {
-  constructor(shapeColor, radius) {
-    super(shapeColor);
+  constructor(shapeColor, radius) {  // Set the radius property
+    super(shapeColor); // Call the super constructor with the shapeColor parameter
     this.radius = radius;
   }
 
-  render(text, fontColor) {
+  render(text, fontColor) {  // Define a render method on the class that takes in text and fontColor parameters
+     // Return an SVG string with the circle and text elements, using the shapeColor, width, height, radius, text, and fontColor properties
     return `<svg xmlns="http://www.w3.org/2000/svg" width="${this.width}" height="${this.height}"><circle cx="${this.width / 2}" cy="${this.height / 2}" r="${this.radius}" fill="${this.shapeColor}" /><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${fontColor}" font-size="50">${text}</text></svg>`;
   }
 }
@@ -51,4 +54,5 @@ class Square extends Shape {
   }
 }
 
+// Export shapes to be for tests
 module.exports = { Circle, Triangle, Square };
