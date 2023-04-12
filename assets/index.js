@@ -1,3 +1,4 @@
+const path = require("path");
 const fs = require("fs");
 const { Circle, Triangle, Square } = require("../Lib/shapes");
 
@@ -40,9 +41,19 @@ import('inquirer').then((inquirerModule) => {
   ];
 
   function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) =>
-      err ? console.error(err) : console.log('Image.svg file generated successfully!')
-    );
+    let filePath = path.join(__dirname, "../examples", fileName);
+    let count = 1;
+    while (fs.existsSync(filePath)) {
+      count++;
+      filePath = path.join(__dirname, "../examples", `${fileName.replace(".svg", "")}${count}.svg`);
+    }
+    fs.writeFile(filePath, data, (err) => {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log(`${path.basename(filePath)} file generated successfully!`);
+      }
+    });
   }
 
   inquirer.prompt(questions).then((answers) => {
@@ -62,3 +73,6 @@ import('inquirer').then((inquirerModule) => {
 }).catch((error) => {
   console.error(error);
 });
+
+
+
